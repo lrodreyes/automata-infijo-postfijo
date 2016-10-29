@@ -3,14 +3,19 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 public class prefija
-{
+{ 
+	String cadena;
+	Queue <String> com=new LinkedList();
+	String arreglo[]=new String[7];
+	
 	String convertir(String cadena)
 	{
+		this.cadena=cadena;
 		Stack < String > pila_operadores = new Stack < String > ();
 		Stack < String > pila_prefija = new Stack < String > ();
 		Queue<String> colaoperandos=new LinkedList();
 		String prefija="";
-		String [] arreglo=cadena.split("(\\+|\\-|x)");
+		separar();
 		for(int i=arreglo.length-1; i>=0;i--)//analizar arreglo
 		{
 			String elemento=arreglo[i];//obtenemos el ultimo elemento del arreglo
@@ -42,4 +47,30 @@ public class prefija
 		return prefija;
 	}
 
+	void separar() //realiza un strings con los operandos y operadores separados
+	{
+		String temporal="";
+		for(int i=0;i<cadena.length();i++)
+		{
+			if(cadena.charAt(i)!='*'&&cadena.charAt(i)!='+'&&cadena.charAt(i)!='-')
+			{
+				temporal+=""+cadena.charAt(i);
+			}
+			else
+			{
+				com.add(temporal);
+				com.add(""+cadena.charAt(i));
+				temporal="";
+			}
+			
+		}
+		com.add(temporal);
+		int i=0;
+		while(com.isEmpty()==false)
+		{
+			arreglo[i]=com.poll();
+			i++;
+		}
+		System.out.println(arreglo);
+	}
 }

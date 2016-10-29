@@ -10,7 +10,6 @@ public class main
 			boolean v=true; //INDICA SI LA CADENA ES CORRECTA O INCORRECTA
 			int x=0,y=0; //LLEVAR EL CONTROL DE LA MATRIZ
 			char caracter;
-			String res="";
 			int grafo[][]= //GRAFO CON LAS DIRECCIONES//LA TERCERA COLUMNA REPRESENTA CUALQUIER COSA DIFERENTE DE 'A' O 'B'//50 REPRESENTA UN ERROR
 				{
 					  ///a b  !=
@@ -56,11 +55,11 @@ public class main
 			if(v==true && x==3) //SI NO SE ENCONTRO NINGUN ERROR Y SE LLEGO AL ESTADO 3
 			{
 				JOptionPane.showMessageDialog(null, "LA OPERACION ES CORRECTA");
-//				prefija conversor=new prefija();
-//				conversor.convertir(cadena);
-				//Ordenando por jerarquia
+				prefija conversor=new prefija();
+				String res=conversor.convertir(cadena);
+
               
-                 JOptionPane.showMessageDialog(null, "LA OPERACION ES CORRECTA \nPostfija: '"+res+"'");
+                 JOptionPane.showMessageDialog(null, "LA OPERACION ES CORRECTA \nPostfija:" +res);
 			}
 			else
 			{
