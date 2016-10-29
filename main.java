@@ -31,7 +31,7 @@ public class main
 				{
 					y=0;
 				}
-				else if(caracter=='+'||caracter=='-')
+				else if(caracter=='+'||caracter=='x'|| caracter=='-')
 				{
 					y=1;
 				}
@@ -51,6 +51,7 @@ public class main
 			if(v==true && x==3) //SI NO SE ENCONTRO NINGUN ERROR Y SE LLEGO AL ESTADO 3
 			{
 				JOptionPane.showMessageDialog(null, "LA OPERACION ES CORRECTA");
+				//mandar a llamar a conversor de prefija
 			}
 			else
 			{
