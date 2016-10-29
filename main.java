@@ -10,6 +10,7 @@ public class main
 			boolean v=true; //INDICA SI LA CADENA ES CORRECTA O INCORRECTA
 			int x=0,y=0; //LLEVAR EL CONTROL DE LA MATRIZ
 			char caracter;
+			String res="";
 			int grafo[][]= //GRAFO CON LAS DIRECCIONES//LA TERCERA COLUMNA REPRESENTA CUALQUIER COSA DIFERENTE DE 'A' O 'B'//50 REPRESENTA UN ERROR
 				{
 					  ///a b  !=
@@ -27,18 +28,22 @@ public class main
 			for(int i=0;i<arreglo.length;i++)//MIENTRAS AUN NO HAYA RECORRIDO TODO EL ARREGLO Y LOS CARACTERES SEAN CORRECTOS
 			{
 				caracter=arreglo[i]; //OBTENEMOS EL PRIMER CARACTER
+         
 				if(caracter=='0'||caracter=='1'||caracter=='2'||caracter=='3'||caracter=='4'||caracter=='5'||caracter=='6'||caracter=='7'||caracter=='8'||caracter=='9')
 				{
-					y=0;
+                                    y=0;
+                                        
 				}
-				else if(caracter=='+'||caracter=='x'|| caracter=='-')
+				else if(caracter=='*' || caracter=='+' || caracter=='-')
 				{
-					y=1;
+					y=1;      
 				}
+
 				else
 				{
 					y=2;
 				}
+                            
 				x=grafo[x][y]; //OBTENEMOS LA NUEVA DIRECCION
 
 				if(x==50)//SI LA NUEVA DIRECCION CONTIENE UN 50=ERROR
@@ -51,7 +56,11 @@ public class main
 			if(v==true && x==3) //SI NO SE ENCONTRO NINGUN ERROR Y SE LLEGO AL ESTADO 3
 			{
 				JOptionPane.showMessageDialog(null, "LA OPERACION ES CORRECTA");
-				//mandar a llamar a conversor de prefija
+//				prefija conversor=new prefija();
+//				conversor.convertir(cadena);
+				//Ordenando por jerarquia
+              
+                 JOptionPane.showMessageDialog(null, "LA OPERACION ES CORRECTA \nPostfija: '"+res+"'");
 			}
 			else
 			{
