@@ -5,7 +5,7 @@ public class postfija
 	String cadena;
 	int puntero1=0,puntero2=0,controlArreglo;
 	String []arreglo=new String[7];
-	String convertir(String cadena)
+	String[] convertir(String cadena)
 	{
 		String postfija="";
 		this.cadena=cadena;
@@ -16,11 +16,18 @@ public class postfija
 		{
 			if(arreglo[controlArreglo].equals("+")==true||arreglo[controlArreglo].equals("-")==true||arreglo[controlArreglo].equals("*")==true)
 			{
-				moverSigOperando();
+				if((arreglo[controlArreglo-1].equals("+")==true||arreglo[controlArreglo-1].equals("-")==true)&& (arreglo[controlArreglo].equals("*")==true))//si la posicion anterior es un operador y no es un *
+				{
+						interOperadores();
+						moverDosOperadores();
+				}
+				else
+				{
+					moverSigOperando();
+				}
 			}
 		}
-
-		return postfija;
+		return arreglo;
 	}
 
 	void separar() //realiza un arreglo con los operandos y operadores separados
@@ -57,5 +64,24 @@ public class postfija
 		else{//si es un numero avanzar a la sig posicion
 			controlArreglo++;
 		}
+	}
+
+	void interOperadores()//intercambia de lugar los operadores
+	{
+		String temporal=arreglo[controlArreglo-1];
+		arreglo[controlArreglo-1]=arreglo[controlArreglo];
+		arreglo[controlArreglo]=temporal;
+		System.out.println("");
+	}
+
+	void moverDosOperadores()//mueve el operador actual y el anterior al sig operando
+	{
+		String operador1=arreglo[controlArreglo-1];
+		String operador2=arreglo[controlArreglo];
+		controlArreglo++;
+		arreglo[controlArreglo-2]=arreglo[controlArreglo];
+		arreglo[controlArreglo-1]=operador1;
+		arreglo[controlArreglo]=operador2;
+		System.out.println("");
 	}
 }
