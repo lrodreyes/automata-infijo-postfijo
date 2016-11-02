@@ -31,7 +31,7 @@ public class prefija
 			
 			if(colaoperandos.size()==2)//si ya hay dos operandos en la cola
 			{
-				while(colaoperandos.isEmpty()!=true)// mientras tenga elementos
+				while(colaoperandos.isEmpty()!=true)// mientras tenga elementos la cola de operandos
 				{
 					pila_prefija.push(colaoperandos.poll());//sacamos los elementos de la cola de operandos y los guardamos en la pila final
 					
@@ -39,9 +39,9 @@ public class prefija
 				pila_prefija.push(pila_operadores.pop());//metemos el elemento en la cima de la pila de operadores a la pila final
 			}
 		}
-		while(pila_prefija.isEmpty()!=true)
+		while(pila_prefija.isEmpty()==false)//mientras la pila este llena
 		{
-			prefija+=pila_prefija.pop();
+			prefija+=","+pila_prefija.pop(); //los concatenamos en una variable
 		}
 		
 		return prefija;

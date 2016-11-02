@@ -27,11 +27,12 @@ public class main
 			for(int i=0;i<arreglo.length;i++)//MIENTRAS AUN NO HAYA RECORRIDO TODO EL ARREGLO Y LOS CARACTERES SEAN CORRECTOS
 			{
 				caracter=arreglo[i]; //OBTENEMOS EL PRIMER CARACTER
+                                String c = "" + caracter; // CONVERTIMOS CARACTER A STRING PARA PODER INSERTAR EN UNA PILA
          
 				if(caracter=='0'||caracter=='1'||caracter=='2'||caracter=='3'||caracter=='4'||caracter=='5'||caracter=='6'||caracter=='7'||caracter=='8'||caracter=='9')
 				{
                                     y=0;
-                                        
+                                                                     
 				}
 				else if(caracter=='*' || caracter=='+' || caracter=='-')
 				{
@@ -55,11 +56,10 @@ public class main
 			if(v==true && x==3) //SI NO SE ENCONTRO NINGUN ERROR Y SE LLEGO AL ESTADO 3
 			{
 				JOptionPane.showMessageDialog(null, "LA OPERACION ES CORRECTA");
-				prefija conversor=new prefija();
-				String res=conversor.convertir(cadena);
-
+				postfija conversor=new postfija();
+				String postfija=conversor.convertir(cadena);
               
-                 JOptionPane.showMessageDialog(null, "LA OPERACION ES CORRECTA \nPostfija:" +res);
+                 JOptionPane.showMessageDialog(null, "LA OPERACION ES CORRECTA \nPostfija: "+postfija);
 			}
 			else
 			{
