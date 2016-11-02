@@ -1,4 +1,12 @@
-package compilador_ab;
+/*INTEGRANTES
+Anaya Moreno Juan Jose
+Cortez Benitez Cecilia
+Hernandez Barco Yosahandy
+Reyes Cazares Luis Rodrigo
+*/
+ compilador_ab;
+import java.util.Arrays;
+
 import javax.swing.*;
 public class main
 {
@@ -28,22 +36,22 @@ public class main
 			{
 				caracter=arreglo[i]; //OBTENEMOS EL PRIMER CARACTER
                                 String c = "" + caracter; // CONVERTIMOS CARACTER A STRING PARA PODER INSERTAR EN UNA PILA
-         
+
 				if(caracter=='0'||caracter=='1'||caracter=='2'||caracter=='3'||caracter=='4'||caracter=='5'||caracter=='6'||caracter=='7'||caracter=='8'||caracter=='9')
 				{
                                     y=0;
-                                                                     
+
 				}
 				else if(caracter=='*' || caracter=='+' || caracter=='-')
 				{
-					y=1;      
+					y=1;
 				}
 
 				else
 				{
 					y=2;
 				}
-                            
+
 				x=grafo[x][y]; //OBTENEMOS LA NUEVA DIRECCION
 
 				if(x==50)//SI LA NUEVA DIRECCION CONTIENE UN 50=ERROR
@@ -57,9 +65,9 @@ public class main
 			{
 				JOptionPane.showMessageDialog(null, "LA OPERACION ES CORRECTA");
 				postfija conversor=new postfija();
-				String postfija=conversor.convertir(cadena);
-              
-                 JOptionPane.showMessageDialog(null, "LA OPERACION ES CORRECTA \nPostfija: "+postfija);
+				String postfija[]=conversor.convertir(cadena);
+
+                 JOptionPane.showMessageDialog(null, "LA OPERACION ES CORRECTA \nPostfija: "+ Arrays.toString(postfija));
 			}
 			else
 			{
