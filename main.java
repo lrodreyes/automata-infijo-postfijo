@@ -4,7 +4,7 @@ Cortez Benitez Cecilia
 Hernandez Barco Yosahandy
 Reyes Cazares Luis Rodrigo
 */
- compilador_ab;
+package compilador_ab;
 import java.util.Arrays;
 
 import javax.swing.*;
@@ -67,7 +67,7 @@ public class main
 				postfija conversor=new postfija();
 				String postfija[]=conversor.convertir(cadena);
 
-                 JOptionPane.showMessageDialog(null, "LA OPERACION ES CORRECTA \nPostfija: "+ Arrays.toString(postfija));
+                 JOptionPane.showMessageDialog(null, "LA OPERACION ES CORRECTA\nInfija:" +cadena+ "\nPostfija: "+ Arrays.toString(postfija));
 			}
 			else
 			{
