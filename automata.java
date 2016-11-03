@@ -8,7 +8,7 @@ package compilador_ab;
 import java.util.Arrays;
 
 import javax.swing.*;
-public class main
+public class automata
 {
 	public static void main (String args[])
 	{
